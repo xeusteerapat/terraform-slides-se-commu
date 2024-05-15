@@ -32,7 +32,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 ---
 transition: fade-out
 layout: image-right
-image: ./assets/infra-as-code.png
+image: ./public/infra-as-code.png
 ---
 
 # What is Infrastructure as Code?
@@ -45,7 +45,7 @@ image: ./assets/infra-as-code.png
 
 ---
 layout: image-right
-image: ./assets/terraform.avif
+image: ./public/terraform.avif
 ---
 <style>
 @import './style.css';
@@ -214,7 +214,7 @@ terraform/
 
 ---
 layout: image-right
-image: ./assets/tf-providers.png
+image: ./public/tf-providers.png
 ---
 
 # Terraform Providers
