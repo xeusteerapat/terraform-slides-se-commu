@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: dracula
+theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # some information about your slides, markdown enabled
@@ -31,28 +31,33 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
+layout: image-right
+image: ./assets/infra-as-code.png
 ---
 
 # What is Infrastructure as Code?
 
-- Infrastructure as Code (IaC) is the practice of managing and provisioning computing infrastructure through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
+- Practice of managing and provisioning computing infrastructure through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
 
-- With IaC, infrastructure is defined in code, allowing for automated provisioning, configuration, and management of infrastructure resources.
+- Automated provisioning, configuration, and management of infrastructure resources.
 
 - IaC enables consistency, scalability, and repeatability in infrastructure deployment and management processes.
 
 ---
 layout: image-right
-image: https://cover.sli.dev
+image: ./assets/terraform.avif
 ---
+<style>
+@import './style.css';
+</style>
 
 # Overview of Terraform
 
-- Terraform is an open-source infrastructure as code software tool created by HashiCorp.
+- **Terraform** is an open-source infrastructure as code software tool created by HashiCorp.
   
-- It enables users to define and provision infrastructure using a high-level configuration language known as HashiCorp Configuration Language (HCL).
+- It enables users to define and provision infrastructure using a high-level configuration language known as **HashiCorp Configuration Language** (HCL).
 
-- Terraform allows for the management of infrastructure across various cloud providers (such as AWS, Azure, Google Cloud) as well as on-premises environments.
+- **Terraform** allows for the management of infrastructure across various cloud providers (such as AWS, Azure, Google Cloud) as well as on-premises environments.
 
 ---
 transition: fade-out
@@ -66,6 +71,71 @@ transition: fade-out
 
 - **Infrastructure Management**: Terraform manages infrastructure resources through the use of providers and resources. Providers are responsible for managing the lifecycle of resources provided by a specific cloud or service.
 
+---
+transition: fade-out
+---
+
+# Basic Terraform Syntax
+
+<div class="grid grid-cols-2 gap-4">
+
+<div>
+
+### Variable Declaration
+
+```hcl
+variable "service_name" {
+  description = "The name of the Cloud Run service"
+  type        = string
+}
+
+variable "region" {
+  description = "The region where service will be deployed"
+  type        = string
+}
+```
+
+### Resource Block
+
+```hcl
+resource "aws_instance" "example" {
+  ami           = var.image_id
+  instance_type = "t2.micro"
+}
+```
+</div>
+<div>
+
+### Loop (Count)
+
+```hcl
+variable "users" {
+  type = map(object({
+    role = string
+  }))
+}
+ 
+locals {
+  users_by_role = {
+    for name, user in var.users : user.role => name...
+  }
+}
+```
+
+### Object
+
+```hcl
+variable "tags" {
+  type = map(string)
+  default = {
+    Name    = "example-instance"
+    Owner   = "user"
+    Project = "demo"
+  }
+}
+```
+</div>
+</div>
 ---
 transition: fade-out
 ---
@@ -142,6 +212,9 @@ terraform/
     └── ...
 ```
 
+---
+layout: image-right
+image: ./assets/tf-providers.png
 ---
 
 # Terraform Providers
