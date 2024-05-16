@@ -30,7 +30,6 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: fade-out
 layout: image-right
 image: ./infra-as-code.png
 ---
@@ -60,8 +59,7 @@ image: ./terraform.avif
 - **Terraform** allows for the management of infrastructure across various cloud providers (such as AWS, Azure, Google Cloud) as well as on-premises environments.
 
 ---
-transition: fade-out
----
+
 
 # Terraform Basics
 
@@ -71,8 +69,6 @@ transition: fade-out
 
 - **Infrastructure Management**: Terraform manages infrastructure resources through the use of providers and resources. Providers are responsible for managing the lifecycle of resources provided by a specific cloud or service.
 
----
-transition: fade-out
 ---
 
 # Basic Terraform Syntax
@@ -137,8 +133,7 @@ variable "tags" {
 </div>
 </div>
 ---
-transition: fade-out
----
+
 
 # Terraform Architecture
 
@@ -164,14 +159,16 @@ level: 2
 
 # Terraform Workflow
 
+- **Planning (`terraform init`)**: Initializes a Terraform working directory then sets up the backend configuration and downloads the provider plugins required for the configuration.
+
+- **Planning (`terraform validate`)**: Checks the syntax and internal consistency of the configuration files without making any changes to the infrastructure.
+
 - **Planning (`terraform plan`)**: Generate an execution plan showing what Terraform will do when you apply your configuration. It helps you understand the changes that Terraform will make to your infrastructure.
 
 - **Applying Changes (`terraform apply`)**: Apply the changes described in the Terraform configuration to your infrastructure. Terraform will create, update, or delete resources as necessary to match the desired state.
 
 - **Destroying Resources (`terraform destroy`)**: Destroy the resources defined in your Terraform configuration. Use with caution as it permanently deletes infrastructure resources.
 
----
-class: px-20
 ---
 
 # Terraform Modules
@@ -217,6 +214,10 @@ layout: image-right
 image: ./tf-providers.png
 ---
 
+<style>
+  @import './tf-providers.css';
+</style>
+
 # Terraform Providers
 
 - **Plugin-based Integration**: Providers in Terraform abstract APIs of various cloud services for resource management.
@@ -246,10 +247,6 @@ image: ./tf-providers.png
 - **Documentation**: Document your configurations and modules for clarity.
 
 ---
-foo: bar
-dragPos:
-  square: 691,33,167,_,-16
----
 
 # Terraform Ecosystem
 
@@ -260,11 +257,6 @@ dragPos:
 ---
 
 # Terraform vs Other IaC Tools
-
-- **Terraform**:
-  - **Language**: HCL (HashiCorp Configuration Language)
-  - **Providers**: Wide support for multiple cloud providers and services
-  - **Community**: Large community and extensive module registry
 
 - **Pulumi**:
   - **Language**: Supports multiple programming languages (JavaScript, TypeScript, Python, Go, .NET)
@@ -288,4 +280,4 @@ layout: center
 class: text-center
 ---
 
-# Q & A
+# Demo
