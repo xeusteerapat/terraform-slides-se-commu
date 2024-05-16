@@ -159,9 +159,9 @@ level: 2
 
 # Terraform Workflow
 
-- **Planning (`terraform init`)**: Initializes a Terraform working directory then sets up the backend configuration and downloads the provider plugins required for the configuration.
+- **Initialize (`terraform init`)**: Initializes a Terraform working directory then sets up the backend configuration and downloads the provider plugins required for the configuration.
 
-- **Planning (`terraform validate`)**: Checks the syntax and internal consistency of the configuration files without making any changes to the infrastructure.
+- **Validation (`terraform validate`)**: Checks the syntax and internal consistency of the configuration files without making any changes to the infrastructure.
 
 - **Planning (`terraform plan`)**: Generate an execution plan showing what Terraform will do when you apply your configuration. It helps you understand the changes that Terraform will make to your infrastructure.
 
@@ -213,10 +213,6 @@ terraform/
 layout: image-right
 image: ./tf-providers.png
 ---
-
-<style>
-  @import './tf-providers.css';
-</style>
 
 # Terraform Providers
 
