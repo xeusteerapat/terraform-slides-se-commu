@@ -244,14 +244,6 @@ image: ./tf-providers.png
 
 ---
 
-# Terraform Ecosystem
-
-- **Terraform Registry**: Find and use pre-built modules shared by the community.
-- **Integration with Tools**: Integrate Terraform with CI/CD tools (e.g., Jenkins, GitLab CI) for automated deployments.
-- **Community and Support**: Access documentation, forums, and community support to resolve issues and share knowledge.
-
----
-
 # Terraform vs Other IaC Tools
 
 - **Pulumi**:
@@ -273,7 +265,8 @@ image: ./tf-providers.png
 
 ---
 layout: center
-class: text-center
 ---
 
 # Demo
+
+<img src="/google_cloud_run_architecture.png" alt="GCP Cloud Run" style="width: 450px; height: 450px;" />
