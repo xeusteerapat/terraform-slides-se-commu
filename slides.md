@@ -32,6 +32,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 ---
 layout: image-right
 image: ./infra-as-code.png
+imageStyle: "width: 600px;"
 ---
 
 # What is Infrastructure as Code?
@@ -212,6 +213,7 @@ terraform/
 ---
 layout: image-right
 image: ./tf-providers.png
+imageStyle: "width: 600px; heigth: auto"
 ---
 
 # Terraform Providers
